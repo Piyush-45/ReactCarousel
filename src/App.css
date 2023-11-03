@@ -1,0 +1,69 @@
+/* Base styles for larger screens (desktop) */
+.hero-carousel {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-carousel .carousel .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Each image takes 50% of the viewport height */
+}
+
+.hero-carousel .carousel .slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hero-carousel .carousel .control-prev.control-arrow,
+.hero-carousel .carousel .control-next.control-arrow {
+  background-color: #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-carousel .carousel .control-prev.control-arrow::before,
+.hero-carousel .carousel .control-next.control-arrow::before {
+  color: #fff;
+  font-size: 24px;
+  line-height: 40px;
+}
+
+.hero-carousel .carousel .thumbs-wrapper {
+  display: none;
+}
+
+.hero-carousel .carousel .autoPlay {
+  background-color: #333;
+}
+
+/* Responsive styles for smaller screens (tablet and mobile) */
+@media (max-width: 768px) {
+  .hero-carousel .carousel .slide {
+    height: 40vh; /* Decrease the height for better mobile experience */
+  }
+
+  .hero-carousel .carousel .control-prev.control-arrow,
+  .hero-carousel .carousel .control-next.control-arrow {
+    width: 30px; /* Adjust the size for mobile */
+    height: 30px;
+  }
+
+  .hero-carousel .carousel .control-prev.control-arrow::before,
+  .hero-carousel .carousel .control-next.control-arrow::before {
+    font-size: 18px; /* Adjust the size of the arrow icons for mobile */
+    line-height: 30px;
+  }
+
+  /* Hide captions on mobile if you don't need them */
+  .hero-carousel .carousel .legend {
+    display: none;
+  }
+}
